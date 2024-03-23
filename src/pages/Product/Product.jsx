@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ModalEdit from "../../components/Element/Modal/ModalEdit";
 
 function Product() {
   const [listProduct, setListProduct] = useState([]);
@@ -10,7 +11,7 @@ function Product() {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
       setListProduct(response.data);
-      // console.log(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -68,6 +69,7 @@ function Product() {
                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">View Detail</button>
                           </Link>
                         </td>
+                        <ModalEdit id={product.id} />
                       </tr>
                     ))}
                   </tbody>
