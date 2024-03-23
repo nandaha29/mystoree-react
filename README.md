@@ -1,9 +1,8 @@
 # MyStoreeApp
-
-Project web base yang digunakan untuk admin toko
+A web base project used to process item data for the MyStoreeApp website
 
 ## Important Note
--
+This website is used as a test by Freelance Frontend Developers for PT. Digdaya Olah Teknologi (DOT) Indonesia for the work carried out by Nanda Hafiza Y.
 
 ## Tech
 ReactJS + tailwindscss + typescript + firebase
