@@ -5,11 +5,7 @@ A web base project used to process item data for the MyStoreeApp website
 This website is used as a test by Freelance Frontend Developers for PT. Digdaya Olah Teknologi (DOT) Indonesia for the work carried out by Nanda Hafiza Y.
 
 ## Tech
-ReactJS + tailwindscss + typescript + firebase
-
-## Download Source Code
- clone repository ini :
- https://github.com/nandaha29/mystoree-react
+ReactJS + tailwindscss + typescript + firebase + fakeapistore
 
  ## Instalation
  ```
@@ -28,7 +24,7 @@ $ npm start
 ```
 
 ## Note Usage
-Akun yang digunakan untuk login harus melalui halaman register, dan untuk email Anda dapat menggunakan fake email.
+The account used to log in must go through the register page, and for email you can use a fake email.
 
 ## Download Source Code
 - link repository github :
