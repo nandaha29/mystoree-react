@@ -15,19 +15,21 @@ ReactJS + tailwindscss + typescript + firebase
  ## Instalation
  ```
 # clone this repository
-$ git clone https://github.com/nanda29/mystoree-react.git 
+$ git clone https://github.com/nandaha29/mystoree-react.git 
 # move to project folder
 $ cd mystoree-react
 # install dependencies
 $ npm install # Or yarn install
 ```
 
-## Usage
-Development
+## Run Development
 ```
 # serve with hot reloading at localhost:3000
 $ npm start
 ```
+
+## Note Usage
+Akun yang digunakan untuk login harus melalui halaman register, dan untuk email Anda dapat menggunakan fake email.
 
 ## Download Source Code
 - link repository github :
