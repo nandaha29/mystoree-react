@@ -33,4 +33,4 @@ $ npm start
 - link repository github :
 https://github.com/nandaha29/mystoree-react
 - link deploy :
-https://mystoree.vercel.app/
+https://mystoreeapp.vercel.app/
