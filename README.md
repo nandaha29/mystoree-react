@@ -1,4 +1,4 @@
-# MyStoree app
+# MyStoreeApp
 
 Project web base yang digunakan untuk admin toko
 
