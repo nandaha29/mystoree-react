@@ -1,6 +1,19 @@
 import React from "react";
+import "toastr/build/toastr.css";
+import toastr from "toastr";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../config/firebase";
 
 function Navbar() {
+  const logoutAccount = () => {
+    signOut(auth)
+      .then(() => {
+        // console.log("udah keluar akun berhasil");
+        toastr.success("Success logout");
+        window.location = "/login";
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <>
       <nav className="bg-white border-3 border-b-red-200 drop-shadow-sm sticky top-0">
@@ -25,11 +38,8 @@ function Navbar() {
                   <a href="/" className=" text-gray-500 hover:text-blue-500 rounded-md px-2 py-2 text-sm font-medium" aria-current="page">
                     Dashboard
                   </a>
-                  <a href="/login" className=" text-gray-500 hover:text-blue-500 rounded-md px-2 py-2 text-sm font-medium" aria-current="page">
-                    Login
-                  </a>
-                                    <a href="/register" className=" text-gray-500 hover:text-blue-500 rounded-md px-2 py-2 text-sm font-medium" aria-current="page">
-                    Register
+                  <a href="" onClick={logoutAccount} className=" text-red-500 hover:text-red-500 rounded-md px-2 py-2 text-sm font-medium" aria-current="page">
+                    Logout
                   </a>
                 </div>
               </div>
@@ -40,6 +50,9 @@ function Navbar() {
           <div className="space-y-1 px-2 pb-3 pt-2">
             <a href="/" className=" text-gray-500 hover:violet-500 rounded-md px-2 py-2 text-sm font-medium" aria-current="page">
               Dashboard
+            </a>
+            <a href="" onClick={logoutAccount} className=" text-red-500 hover:text-red-500 rounded-md px-2 py-2 text-sm font-medium" aria-current="page">
+              Logout
             </a>
           </div>
         </div>

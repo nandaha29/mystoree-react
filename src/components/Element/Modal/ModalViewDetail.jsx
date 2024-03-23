@@ -5,20 +5,11 @@ import { useForm } from "react-hook-form";
 import "toastr/build/toastr.css";
 import toastr from "toastr";
 
-export default function ModalEdit({ id }) {
+export default function ModalViewDetail({ id }) {
   // Mengambil props dengan destructuring
+  const [formData, setFormData] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false); // State untuk mengontrol apakah modal ditampilkan atau tidak
   const modalRef = useRef(null);
-  const [formData, setFormData] = useState({});
-
-  // const [formData, setFormData] = useState({
-  //   id: "",
-  //   title: "",
-  //   description: "",
-  //   image: "",
-  //   category: "",
-  //   price: "",
-  // });
 
   const form = useForm({
     defaultValues: {
@@ -29,6 +20,10 @@ export default function ModalEdit({ id }) {
       category: formData.category,
     },
   });
+
+  const getDetailEdit = async (ids) => {
+    // Mengambil data Permintaan ID dari API
+  };
 
   const handleDetailClick = async () => {
     // Menghapus parameter 'id' karena tidak digunakan di dalam fungsi
@@ -47,8 +42,11 @@ export default function ModalEdit({ id }) {
   };
 
   const evidenceRef = useRef(null);
+  const handleGambar = (e) => {
+    // Menangani perubahan gambar
+  };
 
-  const handleUpdate = async () => {
+  const handleViewDetail = async () => {
     // Mengirimkan data yang diperbarui ke API
 
     try {
@@ -66,8 +64,8 @@ export default function ModalEdit({ id }) {
     <>
       {/* Tombol Edit */}
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">
-        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full" data-toggle="modal" data-target="#modal_edit" onClick={handleDetailClick}>
-          Edit
+        <button className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-full" data-toggle="modal" data-target="#modal_edit" onClick={handleDetailClick}>
+          View
         </button>
       </td>
 
@@ -78,7 +76,7 @@ export default function ModalEdit({ id }) {
           <div className="relative bg-gray-100 rounded-lg shadow">
             {/* Modal header */}
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-              <h3 className="text-xl font-semibold text-gray-900 ">Edit Modal</h3>
+              <h3 className="text-xl font-semibold text-gray-900 ">View Modal</h3>
               <button
                 type="button"
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -168,7 +166,7 @@ export default function ModalEdit({ id }) {
                     {/*  */}
                   </div>
                 </div>
-                <p className="text-gray-500">🖊 It will return you an object with sent id. remember that nothing in real will update in the database.</p>
+                <p className="text-gray-500">Note: It will return you an object with sent id. remember that nothing in real will update in the database.</p>
               </form>
             </div>
             {/* Modal footer */}
@@ -177,7 +175,7 @@ export default function ModalEdit({ id }) {
                 type="button"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 // onClick={() => setIsModalOpen(false)} // Menutup modal saat tombol diterima ditekan
-                onClick={form.handleSubmit(handleUpdate)}
+                onClick={form.handleSubmit(handleViewDetail)}
               >
                 Save
               </button>
