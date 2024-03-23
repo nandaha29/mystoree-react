@@ -15,7 +15,7 @@ ReactJS + tailwindscss + typescript + firebase
  ## Instalation
  ```
 # clone this repository
-$ git clone https://github.com/nanda29/mystoree-react.git 
+$ git clone https://github.com/nandaha29/mystoree-react.git 
 # move to project folder
 $ cd mystoree-react
 # install dependencies
