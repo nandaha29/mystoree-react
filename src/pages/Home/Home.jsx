@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Layout>
-        <h1 className="text-3xl font-bold underline bg-red-200">Hello HOME!</h1>
+        <h1 className="text-3xl font-bold underline ">Hello HOME!</h1>
       </Layout>
     </>
   );
