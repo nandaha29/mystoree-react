@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import "toastr/build/toastr.css";
+import toastr from "toastr";
 
 export default function ModalEdit({ id }) {
   // Mengambil props dengan destructuring
@@ -51,8 +53,10 @@ export default function ModalEdit({ id }) {
       const response = await axios.put(`https://fakestoreapi.com/products/${id}`, formData);
       console.log("Update successful:", response.data);
       setIsModalOpen(false); // Menutup modal setelah pembaruan berhasil
+      toastr.success("Update success", "Success");
     } catch (error) {
       console.error("Error updating data:", error);
+      toastr.error("Update failed!", "Failed");
     }
   };
 
