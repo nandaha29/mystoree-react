@@ -31,3 +31,6 @@ The account used to log in must go through the register page, and for email you 
 https://github.com/nandaha29/mystoree-react
 - link deploy :
 https://mystoreeapp.vercel.app/
+
+## FYI
+for email can use dummy email oke!
